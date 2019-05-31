@@ -10,8 +10,8 @@ namespace BlueOceanLibrary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            var BlackrockLibary = new Library();
+            var books = BlackrockLibary.GetAllBooks();
         }
     }
 }
