@@ -12,13 +12,13 @@ namespace BlueOceanTest
 
     public class UnitTest1
     {
-        IWebDriver driver;
+        //IWebDriver driver;
 
-        [TestInitialize]
-        public void SetUpWebDriver()
-        {          
-                driver = new FirefoxDriver(@"C:\SeleniumDriver");            
-        }
+        //[TestInitialize]
+        //public void SetUpWebDriver()
+        //{          
+        //        //driver = new FirefoxDriver(@"C:\SeleniumDriver");            
+        //}
 
         [TestMethod]
         public void GetAllBooks_VerfiyCount()
@@ -44,13 +44,18 @@ namespace BlueOceanTest
         [TestMethod]
         public void VerifyGoogleTitle()
         {
-            driver.Navigate().GoToUrl("https://www.google.com");
+            //IWebDriver driver;
+            //driver = new FirefoxDriver(@"C:\SeleniumDriver\chromedriver_win32");
+            //driver.Navigate().GoToUrl("http://www.google.com");
+            //string title = driver.Title;
+            //title.Should().Be("Google");
+            //driver.Quit();
 
-            var title = driver.Title;
-
-            title.Should().Be("Google");
-
+            IWebDriver driver;
+            driver = new ChromeDriver(@"C:\SeleniumDriver\chromedriver_win32");
+            driver.Navigate().GoToUrl("http://www.google.com");
             driver.Quit();
+
         }
     }
 }
